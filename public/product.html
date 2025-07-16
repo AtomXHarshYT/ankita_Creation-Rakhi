@@ -326,7 +326,7 @@
             }
             
             try {
-                const response = await fetch(`http://localhost:8000/products/${productId}`);
+                const response = await fetch(`https://ankita-backend.onrender.com/products/${productId}`);
                 const product = await response.json();
                 
                 // Update product details
