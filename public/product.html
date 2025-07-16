@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AnkitaCreation - Premium Rakhi Collection</title>
-    <link rel="icon" type="image/png" href="../static/images/logo.png">
+    <link rel="icon" type="image/png" href="logo.png">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -92,7 +92,7 @@
     <nav class="bg-white shadow-md fixed w-full z-50">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
             <div class="flex items-center">
-                <img src="../static/images/logo.png" alt="AnkitaCreation Logo" class="h-10 w-10 mr-2 rounded-full shadow" />
+                <img src="logo.png" alt="AnkitaCreation Logo" class="h-10 w-10 mr-2 rounded-full shadow" />
                 <span class="text-2xl font-bold text-pink-500">AnkitaCreation</span>
             </div>
             <div class="hidden md:flex space-x-8">
@@ -336,7 +336,7 @@
                 document.getElementById('product-description').textContent = product.description;
                 
                 // Load similar products (exclude current product)
-                const allProductsResponse = await fetch('http://localhost:8000/products');
+                const allProductsResponse = await fetch('https://ankita-backend.onrender.com/products');
                 const allProducts = await allProductsResponse.json();
                 const similarProducts = allProducts.filter(p => p.id != productId).slice(0, 3);
                 
