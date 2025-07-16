@@ -403,7 +403,7 @@ inquiryForm.addEventListener('submit', async (e) => {
     });
 
     try {
-        const response = await fetch('http://localhost:8000/submit-inquiry', {
+        const response = await fetch('https://ankita-backend.onrender.com/submit-inquiry', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
