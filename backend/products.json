@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Elegant Bhai Rakhi",
+    "price": 150,
+    "imageURL": "https://picsum.photos/seed/rakhi1/400/300.jpg",
+    "description": "Premium handcrafted Rakhi for your beloved Bhai. Made with real zari work and pearls."
+  },
+  {
+    "id": 2,
+    "name": "Bhabhi Special Rakhi",
+    "price": 250,
+    "imageURL": "https://picsum.photos/seed/rakhi2/400/300.jpg",
+    "description": "Beautiful Rakhi set for Bhabhi with matching bangles and necklace. Perfect for sisters-in-law."
+  },
+  {
+    "id": 3,
+    "name": "Silver Locket Rakhi",
+    "price": 350,
+    "imageURL": "https://picsum.photos/seed/rakhi3/400/300.jpg",
+    "description": "Exquisite silver locket Rakhi with traditional designs. Includes a small locket for precious memories."
+  },
+  {
+    "id": 4,
+    "name": "Kids Rakhi Set",
+    "price": 120,
+    "imageURL": "https://picsum.photos/seed/rakhi4/400/300.jpg",
+    "description": "Colorful Rakhi set specially designed for kids. Soft materials and bright colors that kids will love."
+  },
+  {
+    "id": 5,
+    "name": "Designer Pearl Rakhi",
+    "price": 280,
+    "imageURL": "https://picsum.photos/seed/rakhi5/400/300.jpg",
+    "description": "Elegant pearl and stone-studded Rakhi. Perfect for the fashion-conscious brother."
+  },
+  {
+    "id": 6,
+    "name": "Gold Plated Rakhi",
+    "price": 450,
+    "imageURL": "https://picsum.photos/seed/rakhi6/400/300.jpg",
+    "description": "Luxurious gold-plated Rakhi with intricate designs. Makes a perfect gift for special occasions."
+  }
+]

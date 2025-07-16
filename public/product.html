@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnkitaCreation - Premium Rakhi Collection</title>
+    <link rel="icon" type="image/png" href="../static/images/logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF6B6B;
+            --secondary: #4ECDC4;
+            --accent: #FFE66D;
+            --dark: #1A535C;
+            --light: #F7FFF7;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, var(--primary), #FF8E8E);
+            transition: all 0.3s ease;
+            border-radius: 50px;
+            padding: 12px 30px;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+        }
+        
+        .product-image {
+            transition: all 0.5s ease;
+        }
+        
+        .product-image:hover {
+            transform: scale(1.05);
+        }
+        
+        .form-input {
+            transition: all 0.3s ease;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 12px 16px;
+        }
+        
+        .form-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+            outline: none;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="../static/images/logo.png" alt="AnkitaCreation Logo" class="h-10 w-10 mr-2 rounded-full shadow" />
+                <span class="text-2xl font-bold text-pink-500">AnkitaCreation</span>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="nav-link text-gray-700 hover:text-pink-500 transition">Home</a>
+                <a href="index.html#products" class="nav-link text-gray-700 hover:text-pink-500 transition">Products</a>
+                <a href="index.html#about" class="nav-link text-gray-700 hover:text-pink-500 transition">About</a>
+                <a href="index.html#contact" class="nav-link text-gray-700 hover:text-pink-500 transition">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white w-full">
+            <div class="container mx-auto px-6 py-3 flex flex-col space-y-4">
+                <a href="index.html" class="text-gray-700 hover:text-pink-500 transition">Home</a>
+                <a href="index.html#products" class="text-gray-700 hover:text-pink-500 transition">Products</a>
+                <a href="index.html#about" class="text-gray-700 hover:text-pink-500 transition">About</a>
+                <a href="index.html#contact" class="text-gray-700 hover:text-pink-500 transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Detail Section -->
+    <section class="pt-24 pb-16">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row">
+                <!-- Product Image -->
+                <div data-aos="fade-right" class="md:w-1/2 mb-10 md:mb-0">
+                    <div class="bg-white rounded-lg shadow-xl overflow-hidden">
+                        <img id="product-image" src="" alt="Product Image" class="w-full product-image">
+                    </div>
+                </div>
+                
+                <!-- Product Details -->
+                <div data-aos="fade-left" class="md:w-1/2 md:pl-16">
+                    <h1 id="product-name" class="text-4xl font-bold text-gray-800 mb-4"></h1>
+                    <div class="flex items-center mb-6">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="text-gray-600 ml-2">(24 reviews)</span>
+                    </div>
+                    <p id="product-price" class="text-3xl font-bold text-pink-500 mb-6"></p>
+                    <p id="product-description" class="text-gray-600 mb-8"></p>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold mb-4">Product Features</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Premium handcrafted design</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Perfect for Raksha Bandhan</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Free shipping across India</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Customizable options available</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Inquiry Form Preview -->
+                    <div class="bg-pink-50 p-6 rounded-lg mb-8">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-envelope text-pink-500 text-2xl mr-3"></i>
+                            <h3 class="text-xl font-semibold">Interested in this Rakhi?</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Fill out the form below to inquire about this product. We'll get back to you within 24 hours!</p>
+                        <a href="#inquiry-form" class="text-pink-500 font-medium hover:underline">Scroll down to complete your inquiry →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inquiry Form Section -->
+    <section id="inquiry-form-section" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div data-aos="fade-up" class="max-w-4xl mx-auto bg-white rounded-xl shadow-xl overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 bg-pink-500 p-8 text-white">
+                        <h3 class="text-2xl font-bold mb-4">💬 Want to Buy This?</h3>
+                        <p class="mb-6">Fill out the form and we'll get back to you within 24 hours to confirm your order.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-truck text-2xl mr-4"></i>
+                                <span>Free shipping on orders above ₹500</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-undo text-2xl mr-4"></i>
+                                <span>30-day return policy</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-lock text-2xl mr-4"></i>
+                                <span>Secure payment options</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 p-8">
+                        <form id="inquiry-form" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+                                <input type="text" id="name" name="name" required
+                                    class="form-input w-full" placeholder="Enter your name">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                <input type="email" id="email" name="email" required
+                                    class="form-input w-full" placeholder="Enter your email">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" required
+                                    class="form-input w-full" placeholder="Enter your phone number">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                                <textarea id="message" name="message" rows="4"
+                                    class="form-input w-full" placeholder="Any special requirements or questions?"></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary text-white font-bold w-full">
+                                Submit Inquiry
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Similar Products -->
+    <section class="py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="similar-products">
+                <!-- Similar products will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-2xl font-bold mb-4">🛍️ AnkitaCreation</h3>
+                    <p class="text-gray-400 max-w-md">
+                        Creating beautiful Rakhi designs for your loved ones since 2010.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                        <ul class="space-y-2">
+                            <li><a href="index.html" class="text-gray-400 hover:text-pink-400 transition">Home</a></li>
+                            <li><a href="index.html#products" class="text-gray-400 hover:text-pink-400 transition">Products</a></li>
+                            <li><a href="index.html#about" class="text-gray-400 hover:text-pink-400 transition">About</a></li>
+                            <li><a href="index.html#contact" class="text-gray-400 hover:text-pink-400 transition">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Categories</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-pink-400 transition">Bhai Rakhi</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-pink-400 transition">Bhabhi Rakhi</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-pink-400 transition">Kids Rakhi</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-pink-400 transition">Designer Collection</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-pink-400 transition">
+                                <i class="fab fa-facebook-f text-xl"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-pink-400 transition">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-pink-400 transition">
+                                <i class="fab fa-whatsapp text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 AnkitaCreation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        // Initialize AOS
+        AOS.init();
+        
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Load product details
+        async function loadProduct() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+            
+            if (!productId) {
+                window.location.href = 'index.html';
+                return;
+            }
+            
+            try {
+                const response = await fetch(`http://localhost:8000/products/${productId}`);
+                const product = await response.json();
+                
+                // Update product details
+                document.getElementById('product-image').src = product.imageURL;
+                document.getElementById('product-name').textContent = product.name;
+                document.getElementById('product-price').textContent = `₹${product.price}`;
+                document.getElementById('product-description').textContent = product.description;
+                
+                // Load similar products (exclude current product)
+                const allProductsResponse = await fetch('http://localhost:8000/products');
+                const allProducts = await allProductsResponse.json();
+                const similarProducts = allProducts.filter(p => p.id != productId).slice(0, 3);
+                
+                const container = document.getElementById('similar-products');
+                container.innerHTML = '';
+                
+                similarProducts.forEach((product, index) => {
+                    const delay = index * 100;
+                    const card = document.createElement('div');
+                    card.className = 'card bg-white';
+                    card.setAttribute('data-aos', 'zoom-in');
+                    card.setAttribute('data-aos-delay', delay);
+                    
+                    card.innerHTML = `
+                        <img src="${product.imageURL}" alt="${product.name}" class="w-full h-60 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">${product.name}</h3>
+                            <p class="text-pink-500 font-bold mb-3">₹${product.price}</p>
+                            <a href="product.html?id=${product.id}" class="btn-primary text-white font-bold inline-block">
+                                View Details
+                            </a>
+                        </div>
+                    `;
+                    
+                    container.appendChild(card);
+                });
+            } catch (error) {
+                console.error('Error loading product:', error);
+                const productContainer = document.querySelector('.container');
+                productContainer.innerHTML = `
+                    <div class="text-center py-20">
+                        <i class="fas fa-exclamation-triangle text-5xl text-yellow-500 mb-6"></i>
+                        <h2 class="text-3xl font-bold text-gray-800 mb-4">Product Not Found</h2>
+                        <p class="text-gray-600 mb-8">The product you're looking for doesn't exist or has been removed.</p>
+                        <a href="index.html" class="btn-primary text-white font-bold">
+                            Back to Home
+                        </a>
+                    </div>
+                `;
+            }
+        }
+        
+        // Handle inquiry form submission
+        const inquiryForm = document.getElementById('inquiry-form');
+inquiryForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        message: document.getElementById('message').value,
+        product_id: new URLSearchParams(window.location.search).get('id')
+    };
+
+    // Show loader
+    Swal.fire({
+        title: 'Submitting Inquiry...',
+        html: 'Please wait while we process your request.',
+        allowOutsideClick: false,
+        didOpen: () => {
+            Swal.showLoading();
+        }
+    });
+
+    try {
+        const response = await fetch('http://localhost:8000/submit-inquiry', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        });
+
+        const data = await response.json();
+
+        Swal.close(); // Close loader
+
+        if (response.ok && data.status === "success") {
+            // Show success message
+            Swal.fire({
+                title: 'Thank You!',
+                text: 'Your inquiry has been submitted successfully. We\'ll contact you soon.',
+                icon: 'success',
+                confirmButtonText: 'Continue Shopping',
+                confirmButtonColor: '#FF6B6B'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = 'index.html';
+                }
+            });
+
+            // Reset form
+            inquiryForm.reset();
+        } else {
+            // Show error with details
+            Swal.fire({
+                title: 'Oops!',
+                text: data.message || 'There was an error submitting your inquiry. Please try again later.',
+                icon: 'error',
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#FF6B6B'
+            });
+        }
+    } catch (error) {
+        Swal.close(); // Close loader
+        // Show network or other errors
+        Swal.fire({
+            title: 'Network Error',
+            text: 'Could not connect to the server. Please check your connection and try again.',
+            icon: 'error',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#FF6B6B'
+        });
+        console.error('Error submitting inquiry:', error);
+    }
+});
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            loadProduct();
+        });
+    </script>
+</body>
+</html>

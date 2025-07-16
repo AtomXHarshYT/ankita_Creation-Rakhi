@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Manage Products</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto py-10">
+        <h1 class="text-3xl font-bold mb-8 text-center">Product Management</h1>
+        <div class="bg-white p-6 rounded-lg shadow mb-8">
+            <h2 class="text-xl font-semibold mb-4">Add / Edit Product</h2>
+            <form id="product-form" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input type="number" id="id" name="id" placeholder="ID" class="form-input" required>
+                <input type="text" id="name" name="name" placeholder="Name" class="form-input" required>
+                <input type="number" id="price" name="price" placeholder="Price" class="form-input" required>
+                <input type="text" id="imageURL" name="imageURL" placeholder="Image URL" class="form-input" required>
+                <textarea id="description" name="description" placeholder="Description" class="form-input md:col-span-2" required></textarea>
+                <div class="md:col-span-2 flex gap-4">
+                    <button type="submit" class="btn-primary px-6 py-2 text-white rounded bg-green-500">Save</button>
+                    <button type="button" id="reset-btn" class="btn-primary px-6 py-2 text-white rounded bg-gray-500">Reset</button>
+                </div>
+            </form>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+            <h2 class="text-xl font-semibold mb-4">All Products</h2>
+            <table class="min-w-full table-auto">
+                <thead>
+                    <tr class="bg-gray-200">
+                        <th class="px-4 py-2">ID</th>
+                        <th class="px-4 py-2">Name</th>
+                        <th class="px-4 py-2">Price</th>
+                        <th class="px-4 py-2">Image</th>
+                        <th class="px-4 py-2">Description</th>
+                        <th class="px-4 py-2">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="products-table"></tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        const API = 'http://localhost:8000/products';
+        const form = document.getElementById('product-form');
+        const resetBtn = document.getElementById('reset-btn');
+        const table = document.getElementById('products-table');
+        let editingId = null;
+        let adminUsername = '';
+        let adminPassword = '';
+
+        // Prompt for admin credentials
+        async function promptForCredentials() {
+            const { value: formValues } = await Swal.fire({
+                title: 'Admin Login',
+                html:
+                    '<input id="swal-input1" class="swal2-input" placeholder="Username" value="admin">' +
+                    '<input id="swal-input2" class="swal2-input" placeholder="Password" type="password">',
+                focusConfirm: false,
+                preConfirm: () => {
+                    return [
+                        document.getElementById('swal-input1').value,
+                        document.getElementById('swal-input2').value
+                    ];
+                },
+                allowOutsideClick: false,
+                allowEscapeKey: false
+            });
+            if (!formValues || !formValues[0] || !formValues[1]) {
+                Swal.fire('Error', 'Username and password required!', 'error').then(() => {
+                    promptForCredentials();
+                });
+                return;
+            }
+            adminUsername = formValues[0];
+            adminPassword = formValues[1];
+            fetchProducts();
+        }
+
+        function getAuthHeader() {
+            return 'Basic ' + btoa(adminUsername + ':' + adminPassword);
+        }
+
+        function fetchProducts() {
+            fetch(API)
+                .then(res => res.json())
+                .then(data => {
+                    table.innerHTML = '';
+                    data.forEach(product => {
+                        table.innerHTML += `
+                            <tr>
+                                <td class="border px-4 py-2">${product.id}</td>
+                                <td class="border px-4 py-2">${product.name}</td>
+                                <td class="border px-4 py-2">₹${product.price}</td>
+                                <td class="border px-4 py-2"><img src="${product.imageURL}" alt="img" class="w-20 h-16 object-cover"></td>
+                                <td class="border px-4 py-2">${product.description}</td>
+                                <td class="border px-4 py-2">
+                                    <button onclick="editProduct(${product.id})" class="bg-blue-500 text-white px-2 py-1 rounded mr-2">Edit</button>
+                                    <button onclick="deleteProduct(${product.id})" class="bg-red-500 text-white px-2 py-1 rounded">Delete</button>
+                                </td>
+                            </tr>
+                        `;
+                    });
+                });
+        }
+
+        window.editProduct = function(id) {
+            fetch(`${API}/${id}`)
+                .then(res => res.json())
+                .then(product => {
+                    editingId = id;
+                    form.id.value = product.id;
+                    form.name.value = product.name;
+                    form.price.value = product.price;
+                    form.imageURL.value = product.imageURL;
+                    form.description.value = product.description;
+                });
+        }
+
+        window.deleteProduct = function(id) {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: 'This will delete the product permanently!',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    fetch(`${API}/${id}`, {
+                        method: 'DELETE',
+                        headers: {
+                            'Authorization': getAuthHeader()
+                        }
+                    })
+                        .then(res => {
+                            if (res.status === 401) {
+                                Swal.fire('Unauthorized', 'Invalid credentials!', 'error').then(() => {
+                                    promptForCredentials();
+                                });
+                                return;
+                            }
+                            return res.json();
+                        })
+                        .then(data => {
+                            if (data) {
+                                Swal.fire('Deleted!', data.message, 'success');
+                                fetchProducts();
+                            }
+                        });
+                }
+            });
+        }
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const product = {
+                id: Number(form.id.value),
+                name: form.name.value,
+                price: Number(form.price.value),
+                imageURL: form.imageURL.value,
+                description: form.description.value
+            };
+            if (editingId && editingId === product.id) {
+                fetch(`${API}/${editingId}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': getAuthHeader()
+                    },
+                    body: JSON.stringify(product)
+                })
+                .then(res => {
+                    if (res.status === 401) {
+                        Swal.fire('Unauthorized', 'Invalid credentials!', 'error').then(() => {
+                            promptForCredentials();
+                        });
+                        return;
+                    }
+                    return res.json();
+                })
+                .then(data => {
+                    if (data) {
+                        Swal.fire('Updated!', data.message, 'success');
+                        form.reset();
+                        editingId = null;
+                        fetchProducts();
+                    }
+                });
+            } else {
+                fetch(API, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': getAuthHeader()
+                    },
+                    body: JSON.stringify(product)
+                })
+                .then(res => {
+                    if (res.status === 401) {
+                        Swal.fire('Unauthorized', 'Invalid credentials!', 'error').then(() => {
+                            promptForCredentials();
+                        });
+                        return;
+                    }
+                    return res.json();
+                })
+                .then(data => {
+                    if (data && data.status === 'success') {
+                        Swal.fire('Added!', data.message, 'success');
+                        form.reset();
+                        fetchProducts();
+                    } else if (data) {
+                        Swal.fire('Error!', data.message, 'error');
+                    }
+                });
+            }
+        });
+
+        resetBtn.addEventListener('click', function() {
+            form.reset();
+            editingId = null;
+        });
+
+        // Start with login prompt
+        promptForCredentials();
+    </script>
+</body>
+</html>
