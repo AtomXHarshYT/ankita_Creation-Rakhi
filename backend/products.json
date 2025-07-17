@@ -1,44 +1,163 @@
 [
   {
     "id": 1,
-    "name": "Elegant Bhai Rakhi",
-    "price": 150,
-    "imageURL": "https://i.postimg.cc/1zyB2SJs/rakhi-2.jpg",
-    "description": "Premium handcrafted Rakhi for your beloved Bhai. Made with real zari work and pearls."
+    "name": "Elegant White Kundan Rakhi & Bracelet Set",
+    "price": "129",
+    "imageURL": "https://i.postimg.cc/J7XWbQwW/129-2.jpg",
+    "description": "A beautiful set featuring a Rakhi with white and pink beads and a central kundan design, paired with a matching gold-toned adjustable bracelet adorned with kundan work and pearls, set against a dark background."
   },
   {
     "id": 2,
-    "name": "Bhabhi Special Rakhi",
-    "price": 250,
-    "imageURL": "https://picsum.photos/seed/rakhi2/400/300.jpg",
-    "description": "Beautiful Rakhi set for Bhabhi with matching bangles and necklace. Perfect for sisters-in-law."
+    "name": "Green Meenakari Rakhi & Bracelet Duo",
+    "price": "149",
+    "imageURL": "https://i.postimg.cc/nzybyXD5/149-2.jpg",
+    "description": "A vibrant green and white Rakhi with a delicate meenakari heart-shaped centerpiece, complemented by an adjustable gold-toned bracelet with a matching green meenakari design and subtle pearl accents."
   },
   {
     "id": 3,
-    "name": "Silver Locket Rakhi",
-    "price": 350,
-    "imageURL": "https://picsum.photos/seed/rakhi3/400/300.jpg",
-    "description": "Exquisite silver locket Rakhi with traditional designs. Includes a small locket for precious memories."
+    "name": "Peacock Eye Rakhi & Bracelet Set",
+    "price": "149",
+    "imageURL": "https://i.postimg.cc/2SkRNR1z/149.jpg",
+    "description": "A striking set showcasing a Rakhi with blue and green threads and a white and blue peacock eye motif, accompanied by a gold-toned adjustable bracelet featuring a similar peacock eye design, green and blue beads, and pearls."
   },
   {
     "id": 4,
-    "name": "Kids Rakhi Set",
-    "price": 120,
-    "imageURL": "https://picsum.photos/seed/rakhi4/400/300.jpg",
-    "description": "Colorful Rakhi set specially designed for kids. Soft materials and bright colors that kids will love."
+    "name": "Square Peacock Rakhi & Adjustable Bracelet",
+    "price": "119",
+    "imageURL": "https://i.postimg.cc/Hxc1vwVX/119.jpg",
+    "description": "A unique Rakhi with a square peacock eye design on a light blue thread, perfectly matched with an adjustable gold-toned bracelet adorned with colorful beads, a peacock eye motif, and dangling pearls."
   },
   {
     "id": 5,
-    "name": "Designer Pearl Rakhi",
-    "price": 280,
-    "imageURL": "https://picsum.photos/seed/rakhi5/400/300.jpg",
-    "description": "Elegant pearl and stone-studded Rakhi. Perfect for the fashion-conscious brother."
+    "name": "Blue and Pink Enamel Rakhi & Bracelet Pair",
+    "price": "149",
+    "imageURL": "https://i.postimg.cc/wMD8g95B/149-3.jpg",
+    "description": "A charming Rakhi with light blue and white threads, featuring a round centerpiece with blue and pink enamel work, alongside a gold-toned adjustable bracelet with a coordinating enamel design, white beads, and pearl drops."
   },
   {
     "id": 6,
-    "name": "Gold Plated Rakhi",
-    "price": 450,
-    "imageURL": "https://picsum.photos/seed/rakhi6/400/300.jpg",
-    "description": "Luxurious gold-plated Rakhi with intricate designs. Makes a perfect gift for special occasions."
+    "name": "Red Triangular Kundan Rakhi Set",
+    "price": "149",
+    "imageURL": "https://i.postimg.cc/qMXVFMMb/149-5.jpg",
+    "description": "A traditional Rakhi with red and white threads, featuring a prominent red triangular kundan centerpiece, and a second strand with red beads and a matching kundan triangle, both adorned with small white pearls."
+  },
+  {
+    "id": 7,
+    "name": "Ruby Red Drop & Crescent Rakhi Bracelet Set",
+    "price": "159",
+    "imageURL": "https://i.postimg.cc/sgTFV6W5/159-2.jpg",
+    "description": "An exquisite set featuring a deep pink Rakhi with a central red drop-shaped kundan element and pearls, paired with a gold-toned adjustable bracelet adorned with matching red kundan drops, crescent moon designs, and pearl clusters."
+  },
+  {
+    "id": 8,
+    "name": "Royal Blue Triangular Rakhi & Bracelet",
+    "price": "149",
+    "imageURL": "https://i.postimg.cc/3JHQ9D70/149-4.jpg",
+    "description": "A striking set with an orange and blue Rakhi featuring a triangular blue and gold meenakari design, accompanied by a complementary bracelet with blue beads and a similar triangular motif, finished with white pearls."
+  },
+  {
+    "id": 9,
+    "name": "Green Kundan Rakhi & Pearl Bracelet Combo",
+    "price": "159",
+    "imageURL": "https://i.postimg.cc/JhF9XsPn/159-3.jpg",
+    "description": "A elegant set including a green and white Rakhi with a green kundan centerpiece and pearls, alongside a beautiful multi-strand white pearl bracelet featuring a matching green kundan and bead embellishment."
+  },
+  {
+    "id": 10,
+    "name": "Orange Thread Kundan Rakhi & Bracelet Set",
+    "price": "159",
+    "imageURL": "https://i.postimg.cc/Ls5chtkw/159.jpg",
+    "description": "A warm-toned set featuring an orange thread Rakhi with a round kundan design and coral beads, coordinated with a gold-toned adjustable bracelet adorned with a similar kundan centerpiece, coral beads, and pearl drops."
+  },
+  {
+    "id": 11,
+    "name": "Delicate Pink & White Rakhi Bracelet Set",
+    "price": "189",
+    "imageURL": "https://i.postimg.cc/zXk6jt04/189.jpg",
+    "description": "A charming set featuring a Rakhi with pink and white threads, adorned with a central circular kundan design and pink and white beads, complemented by a gold-toned adjustable bracelet with a matching kundan motif and pearl drops."
+  },
+  {
+    "id": 12,
+    "name": "Mint Green Lotus Rakhi & Pearl Bracelet",
+    "price": "179",
+    "imageURL": "https://i.postimg.cc/26Bg7CKx/179-2.jpg",
+    "description": "A serene Rakhi with green and white threads, showcasing a mint green lotus charm, paired with a multi-strand white pearl bracelet featuring a similar lotus design surrounded by clustered pearls."
+  },
+  {
+    "id": 13,
+    "name": "Vibrant Green & Red Rakhi Bracelet Set",
+    "price": "199",
+    "imageURL": "https://i.postimg.cc/s2ML3VsR/199-5.jpg",
+    "description": "A festive set featuring a Rakhi with pink and white threads and a central green and red enamel design, matched with a white beaded bracelet adorned with a coordinating green and red motif and green faceted beads."
+  },
+  {
+    "id": 14,
+    "name": "Red Lotus Rakhi & White Pearl Bracelet",
+    "price": "179",
+    "imageURL": "https://i.postimg.cc/zDK9LXWz/179-5.jpg",
+    "description": "A captivating set displaying a Rakhi with green and red threads, highlighted by a prominent red lotus charm, accompanied by a multi-strand white pearl bracelet with a similar red lotus design and hanging pearl and red bead clusters."
+  },
+  {
+    "id": 15,
+    "name": "Sky Blue Kundan Rakhi & Adjustable Bracelet",
+    "price": "199",
+    "imageURL": "https://i.postimg.cc/mgXqxcxw/199-3.jpg",
+    "description": "A elegant set featuring a light blue thread Rakhi with a central circular kundan design and blue beads, paired with a gold-toned adjustable bracelet adorned with multiple kundan elements and delicate pearl drops."
+  },
+  {
+    "id": 16,
+    "name": "Evil Eye & Infinity Symbol Rakhi Set",
+    "price": "199",
+    "imageURL": "https://i.postimg.cc/Gp652ZmT/199-7.jpg",
+    "description": "A unique collection including a blue thread Rakhi with an evil eye and infinity symbol, a minimalist gold-toned mangalsutra chain with an infinity charm, and a matching gold and black beaded bracelet with an infinity design."
+  },
+  {
+    "id": 17,
+    "name": "Yellow Lotus Rakhi & Pearl Bracelet",
+    "price": "179",
+    "imageURL": "https://i.postimg.cc/J0VvT9wC/179-3.jpg",
+    "description": "A bright set featuring a Rakhi with orange and green threads, showcasing a prominent yellow lotus charm with green accents, complemented by a multi-strand white pearl bracelet with a matching yellow lotus design and pearl clusters."
+  },
+  {
+    "id": 18,
+    "name": "Royal Blue Lotus Rakhi & Pearl Bracelet",
+    "price": "179",
+    "imageURL": "https://i.postimg.cc/fycF1BZt/179-4.jpg",
+    "description": "A regal set featuring a Rakhi with blue and white threads, highlighted by a stunning blue and green lotus charm, accompanied by a multi-strand white pearl bracelet with a similar lotus design and hanging pearl drops."
+  },
+  {
+    "id": 19,
+    "name": "Aqua Green Lotus Rakhi & White Beaded Bracelet",
+    "price": "179",
+    "imageURL": "https://i.postimg.cc/ncxNqbYv/179.jpg",
+    "description": "A refreshing set including an aqua blue thread Rakhi with a light green lotus charm and green and blue beads, paired with a multi-strand white beaded bracelet featuring a coordinating lotus design and dangling pearls."
+  },
+  {
+    "id": 20,
+    "name": "Red Enamel & Pearl Rakhi Bracelet Combo",
+    "price": "199",
+    "imageURL": "https://i.postimg.cc/SxN5t6PR/199-2.jpg",
+    "description": "A beautiful set featuring a red and white Rakhi with a central red enamel and kundan design, accompanied by a multi-strand white beaded bracelet with a matching red enamel motif, pearls, and red accents."
+  },
+  {
+    "id": 21,
+    "name": "Festive Tassel Rakhi & Bracelet Set",
+    "price": "229",
+    "imageURL": "https://i.postimg.cc/8cmKZcBL/229.jpg",
+    "description": "A vibrant Rakhi with yellow and green threads adorned with colorful beads and a small circular embellishment, paired with a matching white beaded bracelet featuring a striking multi-colored peacock-inspired charm with dangling pearl and bead tassels in green, pink, and yellow hues."
+  },
+  {
+    "id": 22,
+    "name": "Evil Eye Protection Jewelry Set",
+    "price": "229",
+    "imageURL": "https://i.postimg.cc/GtCgPGYc/229-3.jpg",
+    "description": "A coordinated set featuring a light blue thread Rakhi with an evil eye charm, a gold-toned necklace with a central evil eye pendant, and a black beaded gold-toned bracelet with a matching evil eye design, all against a dark background."
+  },
+  {
+    "id": 23,
+    "name": "Blue Enamel Rakhi & Pearl Bracelet Duo",
+    "price": "199",
+    "imageURL": "https://i.postimg.cc/V6MHbDJG/199.jpg",
+    "description": "A stylish set including a blue and white thread Rakhi with a central blue and red enamel kundan design and pearls, accompanied by a white beaded bracelet with a similar blue enamel motif, kundan stones, and clusters of small pearls."
   }
 ]
