@@ -84,7 +84,10 @@
 
         function fetchProducts() {
             fetch(API)
-                .then(res => res.json())
+                .then(res => {
+                    if (!res.ok) throw new Error('Network error');
+                    return res.json();
+                })
                 .then(data => {
                     table.innerHTML = '';
                     data.forEach(product => {
@@ -102,12 +105,18 @@
                             </tr>
                         `;
                     });
+                })
+                .catch(err => {
+                    Swal.fire('Error', 'Could not load products. Please check your connection or CORS settings.', 'error');
                 });
         }
 
         window.editProduct = function(id) {
             fetch(`${API}/${id}`)
-                .then(res => res.json())
+                .then(res => {
+                    if (!res.ok) throw new Error('Network error');
+                    return res.json();
+                })
                 .then(product => {
                     editingId = id;
                     form.id.value = product.id;
@@ -115,6 +124,9 @@
                     form.price.value = product.price;
                     form.imageURL.value = product.imageURL;
                     form.description.value = product.description;
+                })
+                .catch(err => {
+                    Swal.fire('Error', 'Could not load product details. Please check your connection or CORS settings.', 'error');
                 });
         }
 

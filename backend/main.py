@@ -20,10 +20,8 @@ ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD", "harsh@0958")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://127.0.0.1:5500",
-        "http://localhost:5500",
         "https://ankita-frontend.onrender.com"
-    ],  # Add your Render frontend URL here
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
